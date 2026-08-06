@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { blogsData } from "@/data/data";
@@ -7,6 +8,15 @@ interface BlogPageProps {
   params: Promise<{
     id: string;
   }>;
+}
+
+export async function generateMetadata({ params }: BlogPageProps): Promise<Metadata> {
+  const { id } = await params;
+  const blog = blogsData.find((b) => b.id === id);
+  return {
+    title: blog ? blog.title : "Blog Detail",
+    description: blog ? blog.excerpt : "Blog article view.",
+  };
 }
 
 export default function BlogDetailPage({ params }: BlogPageProps) {

@@ -41,6 +41,11 @@ export interface ClientItem {
   description: string;
 }
 
+export interface TechDetail {
+  name: string;
+  description: string;
+}
+
 export interface ProjectItem {
   id: string;
   title: string;
@@ -50,6 +55,7 @@ export interface ProjectItem {
   primaryTech: string;
   techReason: string;
   tags: string[];
+  techStackDetails?: TechDetail[];
   demoUrl: string;
   githubUrl?: string;
   features?: string[];
@@ -77,7 +83,7 @@ export interface BlogPost {
 export const profileData = {
   name: "Wahyu Anang",
   status: "Available for new Projects",
-  headline: "I am an Informatics student passionate about programming, especially in the field of Web Development. I continuously strive to improve my skills and knowledge while keeping up with the latest technological developments.",
+  headline: "I am an S1 Informatics passionate about programming, especially in the field of Web Development. I continuously strive to improve my skills and knowledge while keeping up with the latest technological developments.",
   cvUrl: "#",
   aboutParagraphs: [
     "I’m a Front-End Developer passionate about creating modern, responsive, and high-performance web applications. Skilled in React.js, Next.js, TypeScript, JavaScript, and Tailwind CSS, I focus on building scalable interfaces and engaging digital experiences with strong attention to usability and performance.",
@@ -99,10 +105,9 @@ export const allSkills: string[] = [
   "Tailwind CSS",
   "PHP",
   "Laravel",
-  "Node.js",
   "PostgreSQL",
+  "MySQL",
   "Supabase",
-  "MongoDB",
   "Git & GitHub"
 ];
 
@@ -140,16 +145,16 @@ export const trainingCertificationData: TrainingCertificationItem[] = [
 ];
 
 export const experienceData: ExperienceItem[] = [
-  // {
-  //   role: "Freelance Fontend Developer",
-  //   company: "Area Solution",
-  //   year: "Januari 2026 - Present",
-  //   duration: "8 bulan",
-  //   location: "Daerah Istimewa Yogyakarta, Indonesia",
-  //   bullets: [
-  //     "Developing scalable, responsive web application interfaces using modern frontend frameworks and clean code principles."
-  //   ]
-  // },
+  {
+    role: "Frontend Developer",
+    company: "Area Solution",
+    year: "Januari 2026 - Present",
+    duration: "8 bulan",
+    location: "Daerah Istimewa Yogyakarta, Indonesia",
+    bullets: [
+      "Developing scalable, responsive web application interfaces using modern frontend frameworks and clean code principles."
+    ]
+  },
   {
     role: "Internship Frontend Developer",
     company: "gramedusa",
@@ -193,7 +198,7 @@ export const awardsData: AwardItem[] = [
   {
     title: "1st Place Winner – UI/UX Category | Pimaposma 2025",
     issuer: "Pimaposma Universitas Amikom Yogyakarta",
-    year: "Des 2025",
+    year: "Jan 2026",
     description: "Awarded 1st place in the UI/UX category at Pimaposma 2025 under the theme 'Synergy in Motion: Design Your Mission'. Emphasized collaborative design, user-centered web interfaces, wireframing, and interactive prototyping."
   },
   {
@@ -220,146 +225,304 @@ export const clientsData: ClientItem[] = [
     description: "Developing responsive frontend web applications and backend PostgreSQL database architecture for seismic data ingestion."
   },
   {
-    id: "tech-studio",
-    name: "Tech Studio Inc.",
-    role: "Frontend Developer",
-    projectTitle: "Real-time Communication App",
-    year: "2024",
-    description: "Built WebSocket-enabled real-time chat interface with custom markdown rendering and Next.js."
+    id: "pati-jaya",
+    name: "Industri Pati Jaya",
+    role: "Full-Stack Developer",
+    projectTitle: "Production & Distribution Management System",
+    year: "Nov 2025 - Dec 2025",
+    description: "Built operational management system for tofu, tempeh, and sprout distribution tracking."
+  },
+  {
+    id: "chiyo-salon",
+    name: "Chiyo Salon",
+    role: "Full-Stack Developer",
+    projectTitle: "Chiyo Salon POS System",
+    year: "2026",
+    description: "Digital POS management system for salon transactions, service tracking, and employee management."
+  },
+  {
+    id: "pt-mutu",
+    name: "PT Mutu Teknologi Digital",
+    role: "Front-End Developer",
+    projectTitle: "Company Profile Website",
+    year: "2025",
+    description: "Modern IT company profile showcasing digital solutions and company capabilities."
+  },
+  {
+    id: "jokitugasmu",
+    name: "JokiTugasmu",
+    role: "Front-End Developer",
+    projectTitle: "Academic Assistance Landing Page",
+    year: "2025",
+    description: "Conversion-focused service landing page introducing academic support services."
+  },
+  {
+    id: "shining",
+    name: "Shining",
+    role: "Front-End Developer",
+    projectTitle: "Educational Learning Platform",
+    year: "2025",
+    description: "Web-based learning platform designed to support digital education and interactive content."
   }
 ];
 
 export const projectsData: ProjectItem[] = [
   {
-    id: "chat-app",
-    title: "Chat App",
-    shortDescription: "A real-time AI conversational workspace with custom persona prompts, markdown rendering, and voice recognition.",
-    fullDescription: "A full-featured real-time Chat Application designed for seamless team communication and AI assistant interactions. Built with state-of-the-art WebSockets and modern UI design principles, featuring custom chat channels, markdown message formatting, theme toggling, and file attachment support.",
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
-    primaryTech: "Next.js & WebSockets",
-    techReason: "Dipilih karena Next.js mendukung Server-Side Rendering yang sangat cepat serta integrasi WebSockets untuk pesan instan real-time secara efisien.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "WebSockets"],
-    demoUrl: "https://example.com/demo/chat-app",
-    githubUrl: "https://github.com/example/chat-app",
-    features: [
-      "Real-time instant messaging using WebSockets",
-      "AI Assistant integration with customizable prompts",
-      "Responsive dark mode interface built with Tailwind CSS",
-      "Full end-to-end message encryption & privacy controls",
-      "Rich media and file attachment previews"
+    id: "volunteerin-id",
+    title: "Volunteerin.id",
+    shortDescription: "A digital volunteer platform designed to connect volunteers with organizations through accessible event discovery, registration management, and community collaboration features.",
+    fullDescription: "Volunteerin.id is a web-based volunteer platform developed to simplify the process of discovering, managing, and participating in social activities. The platform connects volunteers with organizations by providing centralized access to volunteer opportunities across various social sectors.\n\nBuilt with a responsive Single Page Application (SPA) approach, the platform enables users to explore events, register for activities, manage participation history, and interact with volunteer programs through an intuitive interface.",
+    image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1200&q=80",
+    primaryTech: "React.js & PostgreSQL",
+    techReason: "Dipilih karena React.js memungkinkan pengembangan antarmuka yang interaktif dan responsif, sementara PostgreSQL digunakan untuk mengelola data pengguna, event volunteer, dan aktivitas secara terstruktur dengan performa yang stabil.",
+    tags: ["React.js", "JavaScript", "Tailwind CSS", "PostgreSQL"],
+    techStackDetails: [
+      { name: "React.js", description: "For building reusable and interactive UI components." },
+      { name: "JavaScript", description: "For dynamic client-side application logic and state rendering." },
+      { name: "Tailwind CSS", description: "For styling the UI efficiently with responsive utility classes." },
+      { name: "PostgreSQL", description: "For managing users, volunteer events, and application data with reliable performance." }
     ],
-    client: "Tech Studio Inc.",
-    timeline: "3 Months",
-    role: "Lead Full-Stack Developer",
-    projectType: "client"
-  },
-  {
-    id: "crypto-dashboard",
-    title: "Crypto Dashboard",
-    shortDescription: "Interactive crypto asset analytics dashboard with live market updates, interactive charts, and portfolio alerts.",
-    fullDescription: "An advanced cryptocurrency tracker dashboard presenting real-time market data, interactive line charts, price trend indicators, and customized alert triggers for crypto investors.",
-    image: "https://images.unsplash.com/photo-1642543492481-44e81e3914a7?auto=format&fit=crop&w=1200&q=80",
-    primaryTech: "React.js & Chart.js",
-    techReason: "React dipilih karena fleksibilitas state management komponen dan performa tinggi saat merender grafik data harga kripto yang berubah cepat.",
-    tags: ["React", "TypeScript", "Tailwind CSS", "Chart.js"],
-    demoUrl: "https://example.com/demo/crypto",
-    githubUrl: "https://github.com/example/crypto",
+    demoUrl: "https://example.com/demo/volunteerin",
+    githubUrl: "https://github.com/wahyuanang/volunteerin",
     features: [
-      "Live WebSocket price ticker streaming",
-      "Interactive candlestick and portfolio line charts",
-      "Personalized watchlist and price alert notifications",
-      "Dark mode aesthetic optimized for data density"
-    ],
-    client: "Fintech Ventures",
-    timeline: "2 Months",
-    role: "Frontend Engineer",
-    projectType: "client"
-  },
-  {
-    id: "ecommerce-store",
-    title: "E-Commerce Platform",
-    shortDescription: "Modern minimalist shopping platform with instant search, stripe payments, and seamless checkout experience.",
-    fullDescription: "A high-performance headless e-commerce store optimized for maximum conversion and speed. Features instant fuzzy search, dynamic cart drawer, Stripe payment gateway, and customer order tracking.",
-    image: "https://images.unsplash.com/photo-1557821552-17105176677c?auto=format&fit=crop&w=1200&q=80",
-    primaryTech: "Next.js & Stripe",
-    techReason: "Penggunaan Next.js App Router memberikan skor SEO luar biasa dan load time instan yang sangat krusial untuk konversi toko online.",
-    tags: ["Next.js", "Stripe API", "Tailwind CSS", "Zustand"],
-    demoUrl: "https://example.com/demo/store",
-    githubUrl: "https://github.com/example/store",
-    features: [
-      "Instant client-side product filter & search",
-      "Stripe payment checkout integration",
-      "Optimized images and lazy-loading for lightning speed",
-      "Admin inventory and order dashboard"
-    ],
-    client: "Urban Retail Co.",
-    timeline: "4 Months",
-    role: "Full-Stack Engineer",
-    projectType: "client"
-  },
-  {
-    id: "saas-landing-page",
-    title: "SaaS Landing Page",
-    shortDescription: "High-converting landing page built for modern B2B SaaS startup product launches.",
-    fullDescription: "A sleek, conversion-focused SaaS landing page crafted with modern micro-animations, glassmorphism card design, interactive pricing toggles, and customer testimonial sliders.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
-    primaryTech: "Tailwind CSS & Framer Motion",
-    techReason: "Framer Motion memungkinkan animasi mikro yang halus saat di-scroll, menciptakan kesan produk SaaS yang sangat profesional dan modern.",
-    tags: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    demoUrl: "https://example.com/demo/saas",
-    githubUrl: "https://github.com/example/saas",
-    features: [
-      "Fluid Framer Motion scroll and view animations",
-      "Interactive product feature preview tabs",
-      "Responsive design optimized across mobile and desktop",
-      "SEO friendly metadata and lightning fast Web Vitals"
-    ],
-    client: "CloudScale SaaS",
-    timeline: "1 Month",
-    role: "UI/UX Developer",
-    projectType: "personal"
-  },
-  {
-    id: "creative-portfolio",
-    title: "Creative Portfolio",
-    shortDescription: "Interactive 3D glassmorphic portfolio showcase for digital artists and front-end engineers.",
-    fullDescription: "An immersive creative portfolio showcasing artwork and projects through interactive 3D cards, smooth page transitions, dynamic ambient lighting, and subtle audio micro-feedback.",
-    image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80",
-    primaryTech: "Three.js & React",
-    techReason: "Three.js dipilih untuk menghadirkan interaksi 3D glassmorphic yang interaktif bagi pengunjung portofolio.",
-    tags: ["React", "Three.js", "Tailwind CSS"],
-    demoUrl: "https://example.com/demo/portfolio",
-    githubUrl: "https://github.com/example/portfolio",
-    features: [
-      "Glassmorphism dark theme UI system",
-      "Custom cursor and smooth scroll effects",
-      "Modular project detail modal and dedicated page routes"
+      "Volunteer event discovery and exploration",
+      "Event registration and participation tracking",
+      "User profile and volunteer history management",
+      "Organization event management",
+      "Responsive interface optimized for various devices",
+      "Structured volunteer activity information"
     ],
     client: "Personal Project",
-    timeline: "3 Weeks",
-    role: "Creator & Engineer",
+    timeline: "2025",
+    role: "Full-Stack Developer",
     projectType: "personal"
   },
   {
-    id: "task-workflow-app",
-    title: "Task Workflow App",
-    shortDescription: "Kanban task tracking web application with drag-and-drop support, team boards, and automated reminders.",
-    fullDescription: "A productivity tool built to streamline team workflows with customizable Kanban columns, drag-and-drop task cards, file attachments, and activity timelines.",
-    image: "https://images.unsplash.com/photo-1540350394557-8d14678e7f91?auto=format&fit=crop&w=1200&q=80",
-    primaryTech: "TypeScript & Prisma",
-    techReason: "TypeScript menjamin type-safety ketat saat mengelola status tugas Kanban antar anggota tim tanpa bug runtime.",
-    tags: ["TypeScript", "Next.js", "Prisma", "Tailwind CSS"],
-    demoUrl: "https://example.com/demo/task",
-    githubUrl: "https://github.com/example/task",
-    features: [
-      "Drag-and-drop task board management",
-      "Team collaboration & member assignment",
-      "Automated deadline notifications and reminders"
+    id: "company-profile-website",
+    title: "Company Profile Website",
+    shortDescription: "A professional company profile website developed to showcase company services, products, portfolio, and digital presence through a modern and responsive interface.",
+    fullDescription: "This project is an IT company profile website designed to represent the company's identity, services, and portfolio in a professional digital platform.\n\nThe website focuses on clear information presentation, structured content hierarchy, and responsive design to provide an engaging experience for potential clients and partners.",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+    primaryTech: "Next.js & TypeScript",
+    techReason: "Dipilih untuk menghasilkan website yang cepat, scalable, dan maintainable dengan performa optimal melalui modern web architecture.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
+    techStackDetails: [
+      { name: "Next.js", description: "For fast server-side rendering, routing, and optimal SEO performance." },
+      { name: "TypeScript", description: "For type-safe code architecture and reliable component development." },
+      { name: "Tailwind CSS", description: "For creating a modern, sleek, and responsive corporate design." },
+      { name: "Supabase", description: "For backend data management and dynamic portfolio showcase content." }
     ],
-    client: "Productivity Inc.",
-    timeline: "2 Months",
-    role: "Full-Stack Developer",
+    demoUrl: "https://example.com/demo/company-profile",
+    githubUrl: "https://github.com/wahyuanang/company-profile",
+    features: [
+      "Company profile presentation",
+      "Service and product showcase",
+      "Portfolio showcase",
+      "Responsive modern layout",
+      "Dynamic content management",
+      "Optimized performance across devices"
+    ],
+    client: "Client Project",
+    timeline: "2025",
+    role: "Front-End Developer",
+    projectType: "client"
+  },
+  {
+    id: "food-catering-landing-page",
+    title: "Food Catering Landing Page",
+    shortDescription: "A modern landing page developed to promote catering services through attractive visuals, clear information structure, and optimized customer engagement.",
+    fullDescription: "This project is a food catering landing page designed to showcase menu offerings, services, and ordering information in an attractive and user-friendly interface.\n\nThe website focuses on visual hierarchy, responsive layouts, and strategic call-to-action sections to improve customer interaction and support business marketing goals.",
+    image: "https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=1200&q=80",
+    primaryTech: "React.js",
+    techReason: "React.js was used to create reusable components and dynamic interfaces, combined with Tailwind CSS for efficient styling and responsive design implementation.",
+    tags: ["React.js", "Tailwind CSS"],
+    techStackDetails: [
+      { name: "React.js", description: "For building reusable menu components and interactive page sections." },
+      { name: "Tailwind CSS", description: "For implementing visual hierarchy and responsive mobile layouts." }
+    ],
+    demoUrl: "https://example.com/demo/catering",
+    githubUrl: "https://github.com/wahyuanang/catering",
+    features: [
+      "Catering service showcase",
+      "Menu presentation",
+      "Responsive design",
+      "Call-to-action ordering section",
+      "Modern visual interface"
+    ],
+    client: "Personal Project",
+    timeline: "Oct 2025 - Dec 2025",
+    role: "Front-End Developer",
     projectType: "personal"
+  },
+  {
+    id: "nusantara-outdoor",
+    title: "Nusantara Outdoor",
+    shortDescription: "A camping equipment rental website designed to help users explore products, discover rental services, and easily access outdoor equipment information.",
+    fullDescription: "Nusantara Outdoor is a responsive rental platform developed to provide an easy and engaging experience for customers looking for camping equipment.\n\nThe website presents available products, rental information, and outdoor services through a modern interface designed to improve accessibility and customer experience.",
+    image: "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?auto=format&fit=crop&w=1200&q=80",
+    primaryTech: "Next.js & TypeScript",
+    techReason: "Next.js provides optimized performance and scalable architecture, while TypeScript improves code reliability and maintainability during development.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+    techStackDetails: [
+      { name: "Next.js", description: "For fast page transitions and optimized equipment rental catalog rendering." },
+      { name: "TypeScript", description: "For type-safe props and reliable state management." },
+      { name: "Tailwind CSS", description: "For designing a clean, outdoor-themed responsive user interface." }
+    ],
+    demoUrl: "https://example.com/demo/outdoor",
+    githubUrl: "https://github.com/wahyuanang/outdoor",
+    features: [
+      "Outdoor equipment catalog",
+      "Product information display",
+      "Responsive design",
+      "Modern landing page experience",
+      "User-friendly navigation"
+    ],
+    client: "Personal Project",
+    timeline: "2025",
+    role: "Front-End Developer",
+    projectType: "personal"
+  },
+  {
+    id: "industri-pati-jaya",
+    title: "Industri Pati Jaya",
+    shortDescription: "A production and distribution management system developed to streamline operational workflows, employee assignments, and delivery monitoring.",
+    fullDescription: "Industri Pati Jaya is a management system developed to support daily operations of tofu, tempeh, and bean sprout production and distribution.\n\nThe platform provides role-based access for administrators and employees, allowing task management, delivery tracking, and operational monitoring through a centralized system.",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80",
+    primaryTech: "Laravel & MySQL",
+    techReason: "Laravel was selected for building structured backend systems, while MySQL manages operational data such as employees, products, tasks, and reports efficiently.",
+    tags: ["Laravel", "PHP", "MySQL"],
+    techStackDetails: [
+      { name: "Laravel", description: "For building MVC backend architecture, authentication, and API endpoints." },
+      { name: "PHP", description: "For server-side processing and operational workflow automation." },
+      { name: "MySQL", description: "For managing employee records, delivery assignments, and production reports." }
+    ],
+    demoUrl: "https://example.com/demo/pati-jaya",
+    githubUrl: "https://github.com/wahyuanang/pati-jaya",
+    features: [
+      "Employee management",
+      "Delivery task assignment",
+      "Operational monitoring",
+      "Reporting system",
+      "Role-based authentication",
+      "Mobile responsive interface"
+    ],
+    client: "Management Industri Pati Jaya",
+    timeline: "Nov 2025 - Dec 2025",
+    role: "Full-Stack Developer",
+    projectType: "client"
+  },
+  {
+    id: "chiyo-salon-pos",
+    title: "Chiyo Salon POS",
+    shortDescription: "A point-of-sale management system developed to help salon businesses manage transactions, services, employees, and operational data efficiently.",
+    fullDescription: "Chiyo Salon POS is a digital management system designed to simplify salon operations including transaction management, service tracking, and employee activities.\n\nThe platform helps salon owners monitor business activities through an efficient and centralized system.",
+    image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1200&q=80",
+    primaryTech: "Next.js",
+    techReason: "Next.js was used to create a fast and scalable web application with a modern interface, while MySQL manages transactional and business-related data.",
+    tags: ["Next.js", "Tailwind CSS", "MySQL"],
+    techStackDetails: [
+      { name: "Next.js", description: "For building a fast, modern point-of-sale dashboard interface." },
+      { name: "Tailwind CSS", description: "For efficient styling of sales monitoring screens and service tables." },
+      { name: "MySQL", description: "For managing transactional data, services, and employee records." }
+    ],
+    demoUrl: "https://example.com/demo/chiyo-pos",
+    githubUrl: "https://github.com/wahyuanang/chiyo-pos",
+    features: [
+      "Point of sale transaction system",
+      "Service management",
+      "Employee management",
+      "Sales monitoring",
+      "Responsive dashboard"
+    ],
+    client: "Chiyo Salon",
+    timeline: "2026",
+    role: "Full-Stack Developer",
+    projectType: "client"
+  },
+  {
+    id: "jokitugasmu-landing-page",
+    title: "JokiTugasmu Landing Page",
+    shortDescription: "A service landing page developed to promote academic assistance services through an attractive, responsive, and conversion-focused website.",
+    fullDescription: "JokiTugasmu is a landing page designed to introduce academic support services and help users easily understand available services through structured information and clear call-to-action sections.\n\nThe website focuses on modern UI design, accessibility, and user engagement to improve online presence.",
+    image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=80",
+    primaryTech: "Next.js & TypeScript",
+    techReason: "Next.js dan TypeScript dipilih untuk memberikan tampilan landing page interaktif dengan performa optimal dan struktur kode yang mudah dipelihara.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+    techStackDetails: [
+      { name: "Next.js", description: "For high-performance landing page rendering and fast load speed." },
+      { name: "TypeScript", description: "For type safety across service showcase components." },
+      { name: "Tailwind CSS", description: "For creating modern conversion-focused UI layouts." }
+    ],
+    demoUrl: "https://example.com/demo/jokitugasmu",
+    githubUrl: "https://github.com/wahyuanang/jokitugasmu",
+    features: [
+      "Service showcase",
+      "Pricing information",
+      "Contact integration",
+      "Responsive layout",
+      "Modern landing page design"
+    ],
+    client: "JokiTugasmu",
+    timeline: "2025",
+    role: "Front-End Developer",
+    projectType: "client"
+  },
+  {
+    id: "pt-mutu-teknologi-digital",
+    title: "PT Mutu Teknologi Digital",
+    shortDescription: "A company profile website developed to showcase IT services, digital solutions, and company capabilities through a modern online presence.",
+    fullDescription: "This website was developed for PT Mutu Teknologi Digital as a professional digital platform to introduce company services, expertise, and technology solutions.\n\nThe platform emphasizes modern design, responsive experience, and structured content presentation to strengthen company branding and attract potential clients.",
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
+    primaryTech: "Next.js & TypeScript",
+    techReason: "Next.js dan TypeScript dikombinasikan dengan Supabase untuk menghadirkan platform digital perusahaan yang modern, scalable, dan cepat diakses.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
+    techStackDetails: [
+      { name: "Next.js", description: "For fast server-side rendering and corporate web architecture." },
+      { name: "TypeScript", description: "For type-safe component development." },
+      { name: "Tailwind CSS", description: "For clean corporate branding styling." },
+      { name: "Supabase", description: "For dynamic company portfolio content management." }
+    ],
+    demoUrl: "https://example.com/demo/pt-mutu",
+    githubUrl: "https://github.com/wahyuanang/pt-mutu",
+    features: [
+      "Company profile",
+      "Service showcase",
+      "Portfolio section",
+      "Contact integration",
+      "Responsive modern interface"
+    ],
+    client: "PT Mutu Teknologi Digital",
+    timeline: "2025",
+    role: "Front-End Developer",
+    projectType: "client"
+  },
+  {
+    id: "shining-learning-platform",
+    title: "Shining Learning Platform",
+    shortDescription: "An educational learning platform developed to provide accessible digital learning experiences through a modern and interactive web interface.",
+    fullDescription: "Shining is a web-based learning platform designed to support digital education by providing structured learning content and an engaging user experience.\n\nThe platform focuses on accessibility, responsive design, and intuitive navigation to help users interact with educational materials effectively.",
+    image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=1200&q=80",
+    primaryTech: "Next.js & TypeScript",
+    techReason: "Next.js & TypeScript dipilih untuk mendukung platform edukasi digital dengan komponen interaktif, navigasi intuitif, dan kecepatan akses tinggi.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+    techStackDetails: [
+      { name: "Next.js", description: "For interactive learning content rendering and fast routing." },
+      { name: "TypeScript", description: "For type-safe data handling across educational modules." },
+      { name: "Tailwind CSS", description: "For accessible, clean educational UI components." }
+    ],
+    demoUrl: "https://example.com/demo/shining",
+    githubUrl: "https://github.com/wahyuanang/shining",
+    features: [
+      "Learning content management",
+      "Interactive interface",
+      "Responsive design",
+      "Modern educational platform UI",
+      "User-friendly navigation"
+    ],
+    client: "Shining",
+    timeline: "2025",
+    role: "Front-End Developer",
+    projectType: "client"
   }
 ];
 

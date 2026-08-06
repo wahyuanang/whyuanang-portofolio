@@ -1,6 +1,12 @@
+import { Metadata } from "next";
 import Link from "next/link";
 import { blogsData } from "@/data/data";
 import { Clock, ArrowRight, BookOpen } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Blogs",
+  description: "Read articles and insights on web development, UI/UX design, and technology by Wahyu Anang.",
+};
 
 export default function BlogsPage() {
   return (

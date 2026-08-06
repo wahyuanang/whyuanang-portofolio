@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { projectsData } from "@/data/data";
@@ -7,6 +8,15 @@ interface ProjectPageProps {
   params: Promise<{
     id: string;
   }>;
+}
+
+export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
+  const { id } = await params;
+  const project = projectsData.find((p) => p.id === id);
+  return {
+    title: project ? project.title : "Project Detail",
+    description: project ? project.shortDescription : "Project detail view.",
+  };
 }
 
 export default function PortfolioDetailPage({ params }: ProjectPageProps) {
@@ -22,7 +32,7 @@ async function PortfolioDetailContent({ params }: ProjectPageProps) {
   }
 
   return (
-    <article className="min-h-screen pt-32 pb-24 bg-page transition-colors duration-300">
+    <article className="min-h-screen pt-32 pb-24 bg-page transition-colors duration-300 font-mono">
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         {/* Back Link */}
         <Link
@@ -33,7 +43,7 @@ async function PortfolioDetailContent({ params }: ProjectPageProps) {
           <span>Back to Portfolio</span>
         </Link>
 
-        {/* Title & Short Description (Badge Removed as Requested) */}
+        {/* Title & Short Description */}
         <div className="space-y-3 mb-10">
           <h1 className="text-3xl sm:text-5xl font-extrabold text-title tracking-tight">
             {project.title}
@@ -58,13 +68,14 @@ async function PortfolioDetailContent({ params }: ProjectPageProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           {/* Main Content (Left) */}
           <div className="lg:col-span-8 space-y-8">
-            {/* Technology Overview & Short Explanation */}
-            <div className="bg-card-custom border border-custom rounded-2xl p-6 sm:p-8 space-y-4 shadow-md">
-              <h2 className="text-xl font-bold text-title flex items-center gap-2">
+            {/* Technologies Used Section */}
+            <div className="bg-card-custom border border-custom rounded-2xl p-6 sm:p-8 space-y-6 shadow-md">
+              <h2 className="text-xl sm:text-2xl font-bold text-title flex items-center gap-2">
                 <Cpu className="w-5 h-5 text-purple-500" />
-                <span>Teknologi & Alasan Penggunaan</span>
+                <span>Technologies Used</span>
               </h2>
 
+              {/* Overall Primary Tech Explanation Box */}
               <div className="bg-card-sub p-4 rounded-xl border border-custom space-y-2">
                 <div className="flex items-center gap-2">
                   <span className="text-xs font-mono font-bold text-purple-400 uppercase tracking-wider">
@@ -79,22 +90,31 @@ async function PortfolioDetailContent({ params }: ProjectPageProps) {
                 </p>
               </div>
 
-              {/* Technologies List */}
-              <div className="pt-2">
-                <div className="text-xs font-mono text-muted-custom uppercase tracking-wider mb-2">
-                  Teknologi Terkait:
-                </div>
-                <div className="flex flex-wrap gap-2">
+              {/* Bulleted Technologies Used List */}
+              {project.techStackDetails && project.techStackDetails.length > 0 ? (
+                <ul className="space-y-3 pt-2">
+                  {project.techStackDetails.map((tech, idx) => (
+                    <li key={idx} className="flex items-start gap-2.5 text-sm text-body-custom">
+                      <span className="text-purple-500 font-bold text-base leading-none">•</span>
+                      <span>
+                        <strong className="text-title font-bold">{tech.name}</strong> -{" "}
+                        <span className="text-muted-custom">{tech.description}</span>
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <div className="flex flex-wrap gap-2 pt-2">
                   {project.tags.map((tag, idx) => (
                     <span
                       key={idx}
-                      className="px-3 py-1 rounded-full bg-card-sub text-purple-400 border border-custom text-xs font-mono"
+                      className="px-3.5 py-1.5 rounded-full bg-card-sub text-purple-400 border border-custom text-xs font-mono"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
-              </div>
+              )}
             </div>
 
             {/* Overview Section */}
@@ -126,31 +146,6 @@ async function PortfolioDetailContent({ params }: ProjectPageProps) {
                 </div>
               </div>
             )}
-
-            {/* Gallery Showcase */}
-            <div className="bg-card-custom border border-custom rounded-2xl p-6 sm:p-8 space-y-6 shadow-md">
-              <h2 className="text-xl font-bold text-title">Project Showcase Gallery</h2>
-              <p className="text-sm text-muted-custom">
-                Additional screens and technical previews for {project.title}.
-              </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="h-44 rounded-xl bg-card-sub border border-custom overflow-hidden relative group">
-                  <img
-                    src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
-                    alt="Gallery 1"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 opacity-80 group-hover:opacity-100"
-                  />
-                </div>
-                <div className="h-44 rounded-xl bg-card-sub border border-custom overflow-hidden relative group">
-                  <img
-                    src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80"
-                    alt="Gallery 2"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 opacity-80 group-hover:opacity-100"
-                  />
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Sidebar Metadata (Right) */}

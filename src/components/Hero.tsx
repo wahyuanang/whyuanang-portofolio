@@ -18,7 +18,7 @@ export default function Hero() {
           transition={{ duration: 0.5 }}
           className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card-sub border border-custom text-purple-600 dark:text-purple-300 text-xs font-semibold mb-8 shadow-sm"
         >
-          <span className="ml-2">{profileData.status}</span>
+          <span >{profileData.status}</span>
         </motion.div>
 
         {/* Hero Title */}

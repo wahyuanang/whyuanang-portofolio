@@ -10,8 +10,11 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Riya - Full-Stack Developer & Designer Portfolio",
-  description: "I craft beautiful, functional digital experiences that bring ideas to life. Specializing in modern web development, Next.js, React, and user-centered design.",
+  title: {
+    default: "Wahyu Anang | Web Developer",
+    template: "Wahyu Anang | %s"
+  },
+  description: "Professional Web Developer with expertise in web design, web development. Experienced in building responsive and secure web applications for businesses.",
 };
 
 export default function RootLayout({
