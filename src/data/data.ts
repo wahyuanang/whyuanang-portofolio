@@ -314,7 +314,7 @@ export const projectsData: ProjectItem[] = [
 
   ],
 
-  demoUrl: "kmrent.id",
+  demoUrl: "https://kmrent.id/",
 
   features: [
 
@@ -441,7 +441,7 @@ export const projectsData: ProjectItem[] = [
       { name: "Tailwind CSS", description: "For clean corporate branding styling." },
       { name: "Supabase", description: "For dynamic company portfolio content management." }
     ],
-    demoUrl: "mututeknologi.id",
+    demoUrl: "http://mututeknologi.id/",
     // githubUrl: "https://github.com/wahyuanang/pt-mutu",
     features: [
       "Company profile",
