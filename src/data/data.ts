@@ -269,89 +269,223 @@ export const clientsData: ClientItem[] = [
 
 export const projectsData: ProjectItem[] = [
   {
-    id: "volunteerin",
-    title: "Volunteerin",
-    shortDescription: "A digital volunteer platform designed to connect volunteers with organizations through accessible event discovery, registration management, and community collaboration features.",
-    fullDescription: "Volunteerin.id is a web-based volunteer platform developed to simplify the process of discovering, managing, and participating in social activities. The platform connects volunteers with organizations by providing centralized access to volunteer opportunities across various social sectors.\n\nBuilt with a responsive Single Page Application (SPA) approach, the platform enables users to explore events, register for activities, manage participation history, and interact with volunteer programs through an intuitive interface.",
-    image: "/images/volunteerin.png",
-    primaryTech: "React.js & PostgreSQL",
-    techReason: "Dipilih karena React.js memungkinkan pengembangan antarmuka yang interaktif dan responsif, sementara PostgreSQL digunakan untuk mengelola data pengguna, event volunteer, dan aktivitas secara terstruktur dengan performa yang stabil.",
-    tags: ["React.js", "JavaScript", "Tailwind CSS", "PostgreSQL"],
-    techStackDetails: [
-      { name: "React.js", description: "For building reusable and interactive UI components." },
-      { name: "JavaScript", description: "For dynamic client-side application logic and state rendering." },
-      { name: "Tailwind CSS", description: "For styling the UI efficiently with responsive utility classes." },
-      { name: "PostgreSQL", description: "For managing users, volunteer events, and application data with reliable performance." }
-    ],
-    githubUrl: "https://github.com/Dari-Hati-Mencari-Solusi",
-    features: [
-      "Volunteer event discovery and exploration",
-      "Event registration and participation tracking",
-      "User profile and volunteer history management",
-      "Organization event management",
-      "Responsive interface optimized for various devices",
-      "Structured volunteer activity information"
-    ],
-    client: "Personal Project",
-    timeline: "Januari - Juni 2025",
-    role: "Front End Development",
-    projectType: "personal"
-  },
-  {
-  id: "company-profile-website",
-  title: "Gramedusa Company Profile",
+  id: "kmrent-rental-management-system",
 
-  shortDescription: "A professional company profile website for Gramedusa software house designed to showcase digital services, solutions, portfolios, and company identity through a modern, responsive, and SEO-friendly interface.",
+  title: "KMRent - Vehicle Rental Management System",
 
-  fullDescription: "This project is a company profile website developed for Gramedusa software house as a professional digital platform to introduce technology services, software development solutions, and company portfolios.\n\nThe website was designed with a well-structured information architecture, modern visual design, and an SEO-friendly approach to improve company visibility on search engines. In addition, a responsive design implementation ensures an optimal user experience across various devices.",
+  shortDescription: "A web-based vehicle rental management system developed to provide a modern rental management experience through a responsive, structured, and user-friendly interface.",
 
-  image: "/images/gramedusa.png",
+  fullDescription: "KMRent is a web-based vehicle rental management system designed to support rental business operations through an informative and easy-to-use interface.\n\nIn this project, I focused on frontend development by creating various pages and UI components to support system features such as vehicle management, vehicle borrowing, returns, booking, payment interface, transaction reports, and vehicle maintenance monitoring.\n\nThe website was developed with a strong focus on user experience, responsive design across multiple devices, reusable components, and SEO-friendly page structure to improve accessibility and search engine visibility.",
 
-  primaryTech: "Next.js & TypeScript, Supabase",
+  image: "/images/kmrental.png",
 
-  techReason: "Selected to build a high-performance company website with scalable code architecture, SEO optimization, and a faster, more modern user experience.",
+  primaryTech: "Next.js & TypeScript",
 
-  tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
+  techReason: "Next.js and TypeScript were used to build a modern, responsive, and scalable user interface with optimized performance and maintainable code structure.",
+
+  tags: [
+    "Next.js",
+    "TypeScript",
+    "Tailwind CSS",
+    "SEO Friendly"
+  ],
 
   techStackDetails: [
+
+    {
+      name: "Next.js",
+      description: "Used to build a modern frontend application with optimized performance and SEO support."
+    },
+
+    {
+      name: "TypeScript",
+      description: "Used to improve code quality, provide type safety, and create a more structured development workflow."
+    },
+
+    {
+      name: "Tailwind CSS",
+      description: "Used to create responsive, consistent, and scalable user interface designs."
+    },
+
+    {
+      name: "SEO Friendly",
+      description: "Implemented through optimized page structure and best practices to improve accessibility and search engine visibility."
+    }
+
+  ],
+
+  demoUrl: "kmrent.id",
+
+  features: [
+
+    "Rental management dashboard",
+
+    "Vehicle booking interface",
+
+    "Vehicle borrowing and return pages",
+
+    "Payment interface",
+
+    "Vehicle data management",
+
+    "Transaction reporting pages",
+
+    "Vehicle maintenance monitoring",
+
+    "Responsive user interface",
+
+    "Reusable UI components",
+
+    "SEO-friendly website structure"
+
+  ],
+
+  client: "KMRent",
+  timeline: "2025",
+  role: "Frontend Development",
+  projectType: "client"
+
+},
+  {
+    id: "chiyo-salon-pos",
+    title: "Chiyo Salon POS",
+    shortDescription: "A point-of-sale management system developed to help salon businesses manage transactions, services, employees, and operational data efficiently.",
+    fullDescription: "Chiyo Salon POS is a digital management system designed to simplify salon operations including transaction management, service tracking, and employee activities.\n\nThe platform helps salon owners monitor business activities through an efficient and centralized system.",
+    image: "/images/chiyosalon.png",
+    primaryTech: "Next.js, MySQL",
+    techReason: "Next.js was used to create a fast and scalable web application with a modern interface, while MySQL manages transactional and business-related data.",
+    tags: ["Next.js", "Tailwind CSS", "MySQL"],
+    techStackDetails: [
+      { name: "Next.js", description: "For building a fast, modern point-of-sale dashboard interface." },
+      { name: "Tailwind CSS", description: "For efficient styling of sales monitoring screens and service tables." },
+      { name: "MySQL", description: "For managing transactional data, services, and employee records." }
+    ],
+    demoUrl: "https://chiyosalon.com",
+    // githubUrl: "https://github.com/wahyuanang/chiyo-pos",
+    features: [
+      "Point of sale transaction system",
+      "Service management",
+      "Employee management",
+      "Sales monitoring",
+      "Responsive dashboard"
+    ],
+    client: "Chiyo Salon",
+    timeline: "July - August 2026",
+    role: "Full-Stack Development",
+    projectType: "client"
+  },
+  {
+  id: "jokitugasmu-landing-page",
+
+  title: "JokiTugas Landing Page",
+
+  shortDescription: "A service landing page developed to promote academic assistance services with a simple booking system, service selection, checkout flow, and WhatsApp integration through an attractive and responsive website.",
+
+  fullDescription: "JokiTugasmu is a service landing page designed to introduce academic assistance services and simplify the ordering process through a digital booking system.\n\nThe website allows users to explore available services, select desired packages, review orders through a checkout flow, provide personal information, and send booking requests directly via WhatsApp using an automatically generated message template.\n\nThe platform focuses on modern UI design, accessibility, and user engagement to improve online presence while providing a more organized ordering experience for customers.",
+
+  image: "/images/jokitugas.png",
+
+  primaryTech: "Next.js & TypeScript",
+
+  techReason: "Next.js and TypeScript were selected to deliver an interactive service platform with optimal performance, scalable architecture, and a maintainable code structure.",
+
+  tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+
+  techStackDetails: [
+
     { 
       name: "Next.js", 
-      description: "Used to support server-side rendering, routing systems, SEO optimization, and improve website performance through a modern web architecture." 
+      description: "Used for high-performance page rendering, fast loading speed, and building a scalable service booking website." 
     },
 
     { 
       name: "TypeScript", 
-      description: "Used to create more structured code with a secure type system, resulting in more stable component development." 
+      description: "Used to improve code reliability through type safety and maintainable service component development." 
     },
 
     { 
       name: "Tailwind CSS", 
-      description: "Used to create a modern, professional, consistent, and responsive software house website interface." 
-    },
-
-    { 
-      name: "Supabase", 
-      description: "Used as a backend service to support website data storage and management requirements." 
+      description: "Used to create modern, clean, and conversion-focused UI layouts with responsive design." 
     }
+
   ],
 
-  demoUrl: "https://gramedusa.vercel.app",
-  githubUrl: "https://github.com/wahyuanang/gramedusa.git",
+  demoUrl: "https://www.jokitugasmu.my.id/",
+
   features: [
-    "Company profile information presentation ",
-    "Technology services and solutions showcase",
-    "Company portfolio and project showcase",
-    "SEO-friendly website structure",
-    "Modern layout with professional design",
-    "Responsive support across all devices"
+    "Academic service showcase",
+    "Service package selection",
+    "Checkout and order summary system",
+    "Customer information form",
+    "Automatic WhatsApp booking integration",
+    "Responsive layout",
+    "Modern conversion-focused landing page design"
   ],
-  client: "Gramedusa",
-  timeline: "2025",
+  client: "JokiTugasmu",
+  timeline: "July 2025",
   role: "Front-End Development",
   projectType: "client"
 },
-
   {
+    id: "pt-mutu-teknologi-digital",
+    title: "PT. Mutu Teknologi Digital",
+    shortDescription: "A company profile website developed to showcase IT services, digital solutions, and company capabilities through a modern online presence.",
+    fullDescription: "This website was developed for PT Mutu Teknologi Digital as a professional digital platform to introduce company services, expertise, and technology solutions.\n\nThe platform emphasizes modern design, responsive experience, and structured content presentation to strengthen company branding and attract potential clients.",
+    image: "/images/mututeknologi.png",
+    primaryTech: "Next.js & TypeScript, Supabase",
+    techReason: "Next.js dan TypeScript dikombinasikan dengan Supabase untuk menghadirkan platform digital perusahaan yang modern, scalable, dan cepat diakses.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
+    techStackDetails: [
+      { name: "Next.js", description: "For fast server-side rendering and corporate web architecture." },
+      { name: "TypeScript", description: "For type-safe component development." },
+      { name: "Tailwind CSS", description: "For clean corporate branding styling." },
+      { name: "Supabase", description: "For dynamic company portfolio content management." }
+    ],
+    demoUrl: "mututeknologi.id",
+    // githubUrl: "https://github.com/wahyuanang/pt-mutu",
+    features: [
+      "Company profile",
+      "Service showcase",
+      "Portfolio section",
+      "SEO Friendly",
+      "Contact integration",
+      "Responsive modern interface"
+    ],
+    client: "PT Mutu Teknologi Digital",
+    timeline: "2025",
+    role: "Fullstack Development",
+    projectType: "client"
+  },
+  {
+    id: "shining-learning-platform",
+    title: "Shining Learning Platform",
+    shortDescription: "An educational learning platform developed to provide accessible digital learning experiences through a modern and interactive web interface.",
+    fullDescription: "Shining is a web-based learning platform designed to support digital education by providing structured learning content and an engaging user experience.\n\nThe platform focuses on accessibility, responsive design, and intuitive navigation to help users interact with educational materials effectively.",
+    image: "/images/shining.png",
+    primaryTech: "Next.js & TypeScript",
+    techReason: "Next.js & TypeScript dipilih untuk mendukung platform edukasi digital dengan komponen interaktif, navigasi intuitif, dan kecepatan akses tinggi.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+    techStackDetails: [
+      { name: "Next.js", description: "For interactive learning content rendering and fast routing." },
+      { name: "TypeScript", description: "For type-safe data handling across educational modules." },
+      { name: "Tailwind CSS", description: "For accessible, clean educational UI components." }
+    ],
+    demoUrl: "https://shining.web.id/",
+    // githubUrl: "https://github.com/wahyuanang/shining",
+    features: [
+      "Learning content management",
+      "Interactive interface",
+      "SEO Friendly",
+      "Responsive design",
+      "Modern educational platform UI",
+      "User-friendly navigation"
+    ],
+    client: "Shining",
+    timeline: "Jan 2025",
+    role: "Front-End Development",
+    projectType: "client"
+  },
+   {
     id: "food-catering-landing-page",
     title: "Food Catering Landing Page",
     shortDescription: "A modern landing page developed to promote catering services through attractive visuals, clear information structure, and optimized customer engagement.",
@@ -459,144 +593,87 @@ export const projectsData: ProjectItem[] = [
     projectType: "client"
   },
   {
-    id: "chiyo-salon-pos",
-    title: "Chiyo Salon POS",
-    shortDescription: "A point-of-sale management system developed to help salon businesses manage transactions, services, employees, and operational data efficiently.",
-    fullDescription: "Chiyo Salon POS is a digital management system designed to simplify salon operations including transaction management, service tracking, and employee activities.\n\nThe platform helps salon owners monitor business activities through an efficient and centralized system.",
-    image: "/images/chiyosalon.png",
-    primaryTech: "Next.js, MySQL",
-    techReason: "Next.js was used to create a fast and scalable web application with a modern interface, while MySQL manages transactional and business-related data.",
-    tags: ["Next.js", "Tailwind CSS", "MySQL"],
+    id: "volunteerin",
+    title: "Volunteerin",
+    shortDescription: "A digital volunteer platform designed to connect volunteers with organizations through accessible event discovery, registration management, and community collaboration features.",
+    fullDescription: "Volunteerin.id is a web-based volunteer platform developed to simplify the process of discovering, managing, and participating in social activities. The platform connects volunteers with organizations by providing centralized access to volunteer opportunities across various social sectors.\n\nBuilt with a responsive Single Page Application (SPA) approach, the platform enables users to explore events, register for activities, manage participation history, and interact with volunteer programs through an intuitive interface.",
+    image: "/images/volunteerin.png",
+    primaryTech: "React.js & PostgreSQL",
+    techReason: "Dipilih karena React.js memungkinkan pengembangan antarmuka yang interaktif dan responsif, sementara PostgreSQL digunakan untuk mengelola data pengguna, event volunteer, dan aktivitas secara terstruktur dengan performa yang stabil.",
+    tags: ["React.js", "JavaScript", "Tailwind CSS", "PostgreSQL"],
     techStackDetails: [
-      { name: "Next.js", description: "For building a fast, modern point-of-sale dashboard interface." },
-      { name: "Tailwind CSS", description: "For efficient styling of sales monitoring screens and service tables." },
-      { name: "MySQL", description: "For managing transactional data, services, and employee records." }
+      { name: "React.js", description: "For building reusable and interactive UI components." },
+      { name: "JavaScript", description: "For dynamic client-side application logic and state rendering." },
+      { name: "Tailwind CSS", description: "For styling the UI efficiently with responsive utility classes." },
+      { name: "PostgreSQL", description: "For managing users, volunteer events, and application data with reliable performance." }
     ],
-    demoUrl: "https://chiyosalon.com",
-    // githubUrl: "https://github.com/wahyuanang/chiyo-pos",
+    githubUrl: "https://github.com/Dari-Hati-Mencari-Solusi",
     features: [
-      "Point of sale transaction system",
-      "Service management",
-      "Employee management",
-      "Sales monitoring",
-      "Responsive dashboard"
+      "Volunteer event discovery and exploration",
+      "Event registration and participation tracking",
+      "User profile and volunteer history management",
+      "Organization event management",
+      "Responsive interface optimized for various devices",
+      "Structured volunteer activity information"
     ],
-    client: "Chiyo Salon",
-    timeline: "July - August 2026",
-    role: "Full-Stack Development",
-    projectType: "client"
+    client: "Personal Project",
+    timeline: "Januari - Juni 2025",
+    role: "Front End Development",
+    projectType: "personal"
   },
   {
-  id: "jokitugasmu-landing-page",
+  id: "company-profile-website",
+  title: "Gramedusa Company Profile",
 
-  title: "JokiTugas Landing Page",
+  shortDescription: "A professional company profile website for Gramedusa software house designed to showcase digital services, solutions, portfolios, and company identity through a modern, responsive, and SEO-friendly interface.",
 
-  shortDescription: "A service landing page developed to promote academic assistance services with a simple booking system, service selection, checkout flow, and WhatsApp integration through an attractive and responsive website.",
+  fullDescription: "This project is a company profile website developed for Gramedusa software house as a professional digital platform to introduce technology services, software development solutions, and company portfolios.\n\nThe website was designed with a well-structured information architecture, modern visual design, and an SEO-friendly approach to improve company visibility on search engines. In addition, a responsive design implementation ensures an optimal user experience across various devices.",
 
-  fullDescription: "JokiTugasmu is a service landing page designed to introduce academic assistance services and simplify the ordering process through a digital booking system.\n\nThe website allows users to explore available services, select desired packages, review orders through a checkout flow, provide personal information, and send booking requests directly via WhatsApp using an automatically generated message template.\n\nThe platform focuses on modern UI design, accessibility, and user engagement to improve online presence while providing a more organized ordering experience for customers.",
+  image: "/images/gramedusa.png",
 
-  image: "/images/jokitugas.png",
+  primaryTech: "Next.js & TypeScript, Supabase",
 
-  primaryTech: "Next.js & TypeScript",
+  techReason: "Selected to build a high-performance company website with scalable code architecture, SEO optimization, and a faster, more modern user experience.",
 
-  techReason: "Next.js and TypeScript were selected to deliver an interactive service platform with optimal performance, scalable architecture, and a maintainable code structure.",
-
-  tags: ["Next.js", "TypeScript", "Tailwind CSS"],
+  tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
 
   techStackDetails: [
-
     { 
       name: "Next.js", 
-      description: "Used for high-performance page rendering, fast loading speed, and building a scalable service booking website." 
+      description: "Used to support server-side rendering, routing systems, SEO optimization, and improve website performance through a modern web architecture." 
     },
 
     { 
       name: "TypeScript", 
-      description: "Used to improve code reliability through type safety and maintainable service component development." 
+      description: "Used to create more structured code with a secure type system, resulting in more stable component development." 
     },
 
     { 
       name: "Tailwind CSS", 
-      description: "Used to create modern, clean, and conversion-focused UI layouts with responsive design." 
+      description: "Used to create a modern, professional, consistent, and responsive software house website interface." 
+    },
+
+    { 
+      name: "Supabase", 
+      description: "Used as a backend service to support website data storage and management requirements." 
     }
-
   ],
 
-  demoUrl: "https://www.jokitugasmu.my.id/",
-
+  demoUrl: "https://gramedusa.vercel.app",
+  githubUrl: "https://github.com/wahyuanang/gramedusa.git",
   features: [
-    "Academic service showcase",
-    "Service package selection",
-    "Checkout and order summary system",
-    "Customer information form",
-    "Automatic WhatsApp booking integration",
-    "Responsive layout",
-    "Modern conversion-focused landing page design"
+    "Company profile information presentation ",
+    "Technology services and solutions showcase",
+    "Company portfolio and project showcase",
+    "SEO-friendly website structure",
+    "Modern layout with professional design",
+    "Responsive support across all devices"
   ],
-  client: "JokiTugasmu",
-  timeline: "July 2025",
+  client: "Gramedusa",
+  timeline: "2025",
   role: "Front-End Development",
   projectType: "client"
 },
-  {
-    id: "pt-mutu-teknologi-digital",
-    title: "PT. Mutu Teknologi Digital",
-    shortDescription: "A company profile website developed to showcase IT services, digital solutions, and company capabilities through a modern online presence.",
-    fullDescription: "This website was developed for PT Mutu Teknologi Digital as a professional digital platform to introduce company services, expertise, and technology solutions.\n\nThe platform emphasizes modern design, responsive experience, and structured content presentation to strengthen company branding and attract potential clients.",
-    image: "/images/mututeknologi.png",
-    primaryTech: "Next.js & TypeScript, Supabase",
-    techReason: "Next.js dan TypeScript dikombinasikan dengan Supabase untuk menghadirkan platform digital perusahaan yang modern, scalable, dan cepat diakses.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Supabase"],
-    techStackDetails: [
-      { name: "Next.js", description: "For fast server-side rendering and corporate web architecture." },
-      { name: "TypeScript", description: "For type-safe component development." },
-      { name: "Tailwind CSS", description: "For clean corporate branding styling." },
-      { name: "Supabase", description: "For dynamic company portfolio content management." }
-    ],
-    demoUrl: "https://example.com/demo/pt-mutu",
-    // githubUrl: "https://github.com/wahyuanang/pt-mutu",
-    features: [
-      "Company profile",
-      "Service showcase",
-      "Portfolio section",
-      "SEO Friendly",
-      "Contact integration",
-      "Responsive modern interface"
-    ],
-    client: "PT Mutu Teknologi Digital",
-    timeline: "2025",
-    role: "Fullstack Development",
-    projectType: "client"
-  },
-  {
-    id: "shining-learning-platform",
-    title: "Shining Learning Platform",
-    shortDescription: "An educational learning platform developed to provide accessible digital learning experiences through a modern and interactive web interface.",
-    fullDescription: "Shining is a web-based learning platform designed to support digital education by providing structured learning content and an engaging user experience.\n\nThe platform focuses on accessibility, responsive design, and intuitive navigation to help users interact with educational materials effectively.",
-    image: "/images/shining.png",
-    primaryTech: "Next.js & TypeScript",
-    techReason: "Next.js & TypeScript dipilih untuk mendukung platform edukasi digital dengan komponen interaktif, navigasi intuitif, dan kecepatan akses tinggi.",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
-    techStackDetails: [
-      { name: "Next.js", description: "For interactive learning content rendering and fast routing." },
-      { name: "TypeScript", description: "For type-safe data handling across educational modules." },
-      { name: "Tailwind CSS", description: "For accessible, clean educational UI components." }
-    ],
-    demoUrl: "https://shining.web.id/",
-    // githubUrl: "https://github.com/wahyuanang/shining",
-    features: [
-      "Learning content management",
-      "Interactive interface",
-      "SEO Friendly",
-      "Responsive design",
-      "Modern educational platform UI",
-      "User-friendly navigation"
-    ],
-    client: "Shining",
-    timeline: "Jan 2025",
-    role: "Front-End Development",
-    projectType: "client"
-  }
 ];
 
 export const blogsData: BlogPost[] = [
