@@ -189,15 +189,17 @@ async function PortfolioDetailContent({ params }: ProjectPageProps) {
 
               {/* Action Links */}
               <div className="pt-4 border-t border-custom space-y-3">
-                <a
-                  href={project.demoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full py-3 px-4 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-semibold text-sm transition-all flex items-center justify-center gap-2 shadow-lg shadow-purple-600/30"
-                >
-                  <span>Visit Live Project</span>
-                  <ExternalLink className="w-4 h-4" />
-                </a>
+                {project.demoUrl && (
+                  <a
+                    href={project.demoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-3 px-4 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-semibold text-sm transition-all flex items-center justify-center gap-2 shadow-lg shadow-purple-600/30"
+                  >
+                    <span>Visit Live Project</span>
+                    <ExternalLink className="w-4 h-4" />
+                  </a>
+                )}
 
                 {project.githubUrl && (
                   <a

@@ -96,6 +96,8 @@ export default function Hero() {
           {/* Download CV Button */}
           <a
             href={profileData.cvUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             download
             className="px-7 py-3 rounded-full bg-purple-600 hover:bg-purple-500 text-white font-medium text-sm transition-all duration-300 shadow-lg shadow-purple-600/30 hover:shadow-purple-500/50 hover:scale-105 flex items-center gap-2.5 group cursor-pointer"
           >

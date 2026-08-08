@@ -1,11 +1,10 @@
 import { Metadata } from "next";
-import Link from "next/link";
 import { blogsData } from "@/data/data";
-import { Clock, ArrowRight, BookOpen } from "lucide-react";
+import { BookOpen, ExternalLink } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Blogs",
-  description: "Read articles and insights on web development, UI/UX design, and technology by Wahyu Anang.",
+  description: "Read articles and insights on web development, JavaScript, and technology by Wahyu Anang.",
 };
 
 export default function BlogsPage() {
@@ -24,7 +23,7 @@ export default function BlogsPage() {
           </h1>
 
           <p className="text-muted-custom text-base sm:text-lg leading-relaxed">
-            Thoughts, tutorials, and perspectives on front-end engineering, UI/UX design, and modern web development.
+            Thoughts, tutorials, and perspectives on front-end engineering, JavaScript, and modern web development.
           </p>
         </div>
 
@@ -35,8 +34,13 @@ export default function BlogsPage() {
               key={blog.id}
               className="bg-card-custom border border-custom rounded-2xl overflow-hidden hover:border-purple-500/60 transition-all duration-300 flex flex-col group shadow-md hover:-translate-y-1"
             >
-              {/* Cover Image */}
-              <div className="relative w-full h-48 overflow-hidden bg-card-sub">
+              {/* Cover Image with Link to Medium */}
+              <a
+                href={blog.mediumUrl || "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative w-full h-48 overflow-hidden bg-card-sub block cursor-pointer"
+              >
                 <img
                   src={blog.coverImage}
                   alt={blog.title}
@@ -48,36 +52,46 @@ export default function BlogsPage() {
                     {blog.category}
                   </span>
                 </div>
-              </div>
+              </a>
 
               {/* Content */}
               <div className="p-6 flex-grow flex flex-col justify-between space-y-4">
                 <div className="space-y-3">
-                  <div className="flex items-center gap-4 text-xs text-muted-custom">
-                    <span className="flex items-center gap-1.5">
-                      <Clock className="w-3.5 h-3.5 text-purple-500 dark:text-purple-400" />
-                      {blog.readTime}
-                    </span>
-                  </div>
-
-                  <h2 className="text-xl font-bold text-title group-hover:text-purple-500 transition-colors line-clamp-2">
-                    {blog.title}
-                  </h2>
+                  <a
+                    href={blog.mediumUrl || "#"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <h2 className="text-lg font-bold text-title group-hover:text-purple-500 transition-colors line-clamp-2">
+                      {blog.title}
+                    </h2>
+                  </a>
 
                   <p className="text-muted-custom text-xs line-clamp-3 leading-relaxed">
                     {blog.excerpt}
                   </p>
                 </div>
 
-                {/* Footer Link */}
-                <div className="pt-4 border-t border-custom flex items-center justify-end">
-                  <Link
-                    href={`/blogs/${blog.id}`}
-                    className="text-xs font-semibold text-purple-600 dark:text-purple-400 hover:text-purple-500 flex items-center gap-1 transition-colors"
-                  >
-                    <span>Read Article</span>
-                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-                  </Link>
+                {/* Footer Action: Direct to Medium */}
+                <div className="pt-4 border-t border-custom flex items-center justify-between">
+                  {blog.readTime && (
+                    <span className="text-[11px] font-mono text-muted-custom">
+                      ⏱ {blog.readTime}
+                    </span>
+                  )}
+
+                  {blog.mediumUrl && (
+                    <a
+                      href={blog.mediumUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-purple-600 hover:bg-purple-500 text-white font-semibold text-xs transition-all shadow-md shadow-purple-600/30"
+                    >
+                      <span>Read on Medium</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </a>
+                  )}
                 </div>
               </div>
             </article>

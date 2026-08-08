@@ -87,15 +87,17 @@ export default function ProjectsSection() {
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </Link>
 
-                  <a
-                    href={project.demoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2.5 rounded-full bg-[#121220] hover:bg-[#1a1a2e] text-gray-300 hover:text-purple-300 border border-purple-800/40 transition-colors"
-                    title="Visit Demo"
-                  >
-                    <ExternalLink className="w-4 h-4" />
-                  </a>
+                  {project.demoUrl && (
+                    <a
+                      href={project.demoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2.5 rounded-full bg-[#121220] hover:bg-[#1a1a2e] text-gray-300 hover:text-purple-300 border border-purple-800/40 transition-colors"
+                      title="Visit Demo"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>

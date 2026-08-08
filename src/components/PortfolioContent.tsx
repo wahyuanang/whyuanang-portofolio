@@ -127,7 +127,7 @@ export default function PortfolioContent() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-muted-custom hover:text-purple-500 transition-colors"
-                      title="Live Demo"
+                      title="Visit Project"
                     >
                       <ExternalLink className="w-4 h-4" />
                     </a>

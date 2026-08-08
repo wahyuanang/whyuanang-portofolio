@@ -15,6 +15,11 @@ export const metadata: Metadata = {
     template: "Wahyu Anang | %s"
   },
   description: "Professional Web Developer with expertise in web design, web development. Experienced in building responsive and secure web applications for businesses.",
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
 };
 
 export default function RootLayout({

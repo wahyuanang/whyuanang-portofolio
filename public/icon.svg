@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9333ea" />
+      <stop offset="50%" stop-color="#7c3aed" />
+      <stop offset="100%" stop-color="#4f46e5" />
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+  <!-- Background Circle -->
+  <circle cx="64" cy="64" r="60" fill="url(#bgGrad)" />
+  <!-- Inner Highlight -->
+  <circle cx="64" cy="64" r="58" fill="none" stroke="url(#glowGrad)" stroke-width="2.5" />
+  <!-- Letter W -->
+  <text
+    x="64"
+    y="79"
+    text-anchor="middle"
+    font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+    font-weight="900"
+    font-size="54"
+    fill="#ffffff"
+    letter-spacing="-1"
+  >W</text>
+</svg>
