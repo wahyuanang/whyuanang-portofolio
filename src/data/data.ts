@@ -85,7 +85,7 @@ export const profileData = {
   name: "Wahyu Anang",
   status: "Available for new Projects",
   headline: "I am an S1 Informatics passionate about programming, especially in the field of Web Development. I continuously strive to improve my skills and knowledge while keeping up with the latest technological developments.",
-  cvUrl: "https://drive.google.com/file/d/1rAl7Mpf-up_O4CZR54ijMqxtGPhI-6PY/view?usp=sharing",
+  cvUrl: "https://docs.google.com/document/d/1tOcduQaL2cnd6kN6g927ugkGsGxaORPh/edit?usp=sharing&ouid=102611372783129454995&rtpof=true&sd=true",
   aboutParagraphs: [
     "I’m a Front-End Developer passionate about creating modern, responsive, and high-performance web applications. Skilled in React.js, Next.js, TypeScript, JavaScript, and Tailwind CSS, I focus on building scalable interfaces and engaging digital experiences with strong attention to usability and performance.",
     "With experience in freelance projects and internship environments, I develop web-based solutions using modern development practices and clean code principles. I’m continuously learning, exploring new technologies, and improving my skills to create impactful digital products that solve problems and deliver meaningful user experiences."
